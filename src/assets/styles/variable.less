@@ -1,0 +1,71 @@
+@color-default: #1d1d1d;
+@color-error: #cd0000;
+
+@button-bdcolor: #000;
+@button-bgcolor: #000;
+@button-color: #f9f9f9;
+
+@button-disabled-bdcolor: #d8d8d8;
+@button-disabled-bgcolor: #f9f9f9;
+@button-disabled-color: #d2d2d2;
+
+@input-placeholder: #a0a0a0;
+@input-disabled-color: #d2d2d2;
+@input-default-bdcolor: #d8d8d8;
+
+@color-gray1: #d8d8d8;
+@color-gray2: #ececec;
+
+@loading-level: 1000;
+
+.flexMixin (@dir: row; @justify: flex-start; @align: flex-start) {
+  display: flex;
+  flex-direction: if((@dir = row), row, column);
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.flex {
+  .flexMixin();
+}
+
+.flex-center {
+  .flexMixin(row, center, center);
+}
+
+.flex-between-start {
+  .flexMixin(row, space-between);
+}
+.flex-between-center {
+  .flexMixin(row, space-between, center);
+}
+
+.flex-col {
+  .flexMixin(column);
+}
+
+.flex-col-center {
+  .flexMixin(column, center, center);
+}
+.flex-col-start-center {
+  .flexMixin(column, flex-start, center);
+}
+
+.is-ios .safe-area {
+  height: constant(safe-area-inset-bottom);
+  height: env(safe-area-inset-bottom);
+  flex-shrink: 0;
+}
+
+.is-android .safe-area {
+  height: 8px;
+  flex-shrink: 0;
+}
+
+.grid {
+  display: grid;
+}
+
+.col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}

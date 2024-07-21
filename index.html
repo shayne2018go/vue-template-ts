@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      id="viewport"
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,user-scalable=no,viewport-fit=cover"
+    />
+    <title></title>
+    <style>
+      .default-loading {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+        background: #fff;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      .default-loading-content {
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        box-sizing: border-box;
+        left: 50%;
+        top: 43.508vh;
+        margin-left: -22px;
+        animation: defaultLoadingAni 1s linear infinite;
+      }
+      .default-loading-content .svg-icon {
+        width: 100%;
+        height: 100%;
+      }
+      @keyframes defaultLoadingAni {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(1turn);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="default-loading">
+        <div class="default-loading-content">
+          <img class="svg-icon" src="./public/loading.svg" alt="" />
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+    <script type="text/javascript">
+    </script>
+  </body>
+</html>
